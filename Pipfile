@@ -1,0 +1,20 @@
+[[source]]
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+
+[dev-packages]
+bumpversion = "*"
+wheel = "*"
+watchdog = "*"
+flake8 = "*"
+tox = "*"
+coverage = "*"
+pytest = "*"
+pytest-runner = "*"
+PyInstaller = "*"
+Sphinx = "*"
+twine = "*"
+
+[packages]
+bioenhancers = {path = ".", editable = true}
+click = "*"
