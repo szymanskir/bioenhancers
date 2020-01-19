@@ -1,4 +1,3 @@
-import pdb
 import numpy as np
 from Bio import SeqIO
 from bioenhancers.features import KmerVectorizer
@@ -19,13 +18,15 @@ negative_features_labs = np.zeros(negative_features.shape[0], )
 features = np.vstack((positive_features, negative_features))
 labs = np.hstack((positive_features_labs, negative_features_labs))
 
-rf_classifier = RandomForestClassifier()
+rf_classifier = RandomForestClassifier(random_state=2137)
 rf_classifier.fit(X=features, y=labs)
 
 chr21 = SeqIO.read("./data/chr21.fa", "fasta")
 chr21_seq = str(chr21.seq).upper()
+
 chunk_size = 1500
 chunk_step = 750
+
 chr21_chunks = [chr21_seq[ind:(ind+chunk_size)]
                 for ind in range(0, len(chr21_seq), chunk_step)]
 chr21_n_chunks_ind = [ind for ind,

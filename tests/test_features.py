@@ -20,3 +20,16 @@ def test_extract_features():
 
     result: Dict[str, int] = extract_features(test_seq, k=4, step=4)
     assert result["AAAA"] == 2 / 8
+
+
+def test_check_order_in_extract_features():
+    test_seq1: str = "AAAATTTT"
+    test_seq2: str = "TTTTAAAA"
+
+    result1: Dict[str, int] = extract_features(test_seq1, k=4, step=4)
+    result2: Dict[str, int] = extract_features(test_seq2, k=4, step=4)
+
+    features1 = list(result1.keys())
+    features2 = list(result2.keys())
+
+    assert features1 == features2
