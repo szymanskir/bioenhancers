@@ -16,5 +16,10 @@ Sphinx = "*"
 twine = "*"
 
 [packages]
-bioenhancers = {path = ".", editable = true}
+bioenhancers = {path = ".",editable = true}
 click = "*"
+mypy = "*"
+biopython = "*"
+importlib-resources = "*"
+autopep8 = "*"
+scikit-learn = "*"
