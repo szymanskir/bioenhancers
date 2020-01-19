@@ -1,4 +1,3 @@
-import pdb
 import numpy as np
 from Bio import SeqIO
 from bioenhancers.features import KmerVectorizer
@@ -19,8 +18,6 @@ negative_features_labs = np.zeros(negative_features.shape[0], )
 
 features = np.vstack((positive_features, negative_features))
 labs = np.hstack((positive_features_labs, negative_features_labs))
-
-pdb.set_trace()
 
 # Train model
 rf_classifier = RandomForestClassifier(random_state=2137)
